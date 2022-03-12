@@ -9,6 +9,10 @@ import pymodules.modbus as bus
 import pymodules.robot as robot
 import pymodules.camera as camera
 import pymodules.imgproc as  imgproc
+import crcmod
+import binascii
+
+
 
 
 
@@ -282,7 +286,7 @@ class MainWidget(QWidget):
             self.addLog("获取图像成功，保存为文件%s" % v)
             bmp=QPixmap()
             if bmp.load(v):
-                self.imgLabel.setPixmap(bmp.scaledToHeight(self.imgLabel.height()-5))
+                self.imgLabel.setPixmap(bmp.scaledToHeight(self.imgLabel.height()-50))
                 qApp.processEvents()
             
     #读取机器人当前坐标
